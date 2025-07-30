@@ -28,4 +28,4 @@ public class ArraysCC {
 
         sc.close();
     }
-} 
+}  
