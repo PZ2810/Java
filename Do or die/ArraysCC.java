@@ -40,5 +40,35 @@ public class ArraysCC {
     // }
 
     //largest Number
+    // public static int getlargest(int numbers[]){
+    //     int largest=Integer.MIN_VALUE;
+    //     int smallest=Integer.MAX_VALUE;
+    //     for(int i=0;i<numbers.length;i++){
+    //         if(largest<numbers[i]){
+    //             largest=numbers[i];
+    //         }
+    //         if (smallest>numbers[i]){
+    //             smallest=numbers[i];
+
+    //         }
+            
+    //     }
+    //     System.out.println("smallest value is : "+ smallest);
+    //     return largest;
+    // }
+    // public static void main(String[] args) {
+    //     int numbers[]={1,2,3,5,6,8,2};
+    //     System.out.println("largest value is : "+ getlargest(numbers));
+
+    // }
     
+    //binary search
+    public static int binarysearch(int numbers[]){
+        int start =0
+    }
+    public static void main(String[] args) {
+        int number[]={2,4,6,8,10,12,14,16};
+        int key=14;
+
+    }
 }
