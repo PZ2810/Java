@@ -94,31 +94,102 @@ public class ArraysCC {
     // }
 
     //reverse of array
-    public static void reverse(int numbers[]){
-        int first=0, last=numbers.length-1;
-        while(first<last){
-            //swap
-            int swap =numbers[last];
-            numbers[last] =numbers[first];
-            numbers[first]= swap;
+    // public static void reverse(int numbers[]){
+    //     int first=0, last=numbers.length-1;
+    //     while(first<last){
+    //         //swap
+    //         int swap =numbers[last];
+    //         numbers[last] =numbers[first];
+    //         numbers[first]= swap;
 
-            first++;
-            last--;
+    //         first++;
+    //         last--;
 
             
+    //     }
+
+    // }
+    // public static void main(String[] args) {
+    //     int numbers[]={2,4,6,8,10,12};
+
+    //     reverse(numbers);
+
+    //     for(int i=0;i<numbers.length;i++){
+    //         System.out.print( numbers[i]+" ");
+
+    //     }
+    //     System.out.println();
+
+    // }
+
+    //Pairs in an array 
+    // public static void printPairs(int numbers[]) {
+    //     int tp=0;
+    //     for (int i = 0; i < numbers.length; i++) {
+    //         int current = numbers[i];
+    //         for (int j = i + 1; j < numbers.length; j++) {
+    //             System.out.print("(" + current + "," + numbers[j] + ")");
+    //             tp++;
+    //         }
+    //         System.out.println();
+    //     }
+    //     System.out.println("tp: " + tp);
+    // }
+    // public static void main(String[] args) {
+    //     int numbers[]={2,4,6,8,10};
+    //     printPairs(numbers);
+    // }
+
+//PRint subarrays
+// public static void subarrays(int numbers[]){
+//     int tp=0;
+//     for(int i=0;i<numbers.length;i++){
+//         int start=i;
+//         for(int j=i;j<numbers.length;j++){
+//             int end=j;
+//             for(int k=start;k<=end;k++){
+//                 System.out.print(numbers[k]+" ");
+//                 tp++;               
+//             }
+//             System.out.println();
+//         }  
+//         System.out.println();
+//         System.out.println(tp);
+//     }
+//     System.out.println(tp);
+// }
+//     public static void main(String[] args) {
+//         int numbers[]={2,4,6,8,10};
+//         subarrays(numbers);
+
+//     }
+
+//Max Subarray Sum
+public static void MaxSubaraySum(int numbers[]){ 
+    int currSum=0;
+    int maxSum=Integer.MIN_VALUE;
+     for(int i=0;i<numbers.length;i++){
+        int start=i;
+   for(int j=i;j<numbers.length;j++){
+            int end=j;
+            currSum=0;
+            for(int k=start;k<=end;k++){
+                currSum+=numbers[k];
+            }
+            System.out.println(currSum);
+            if(maxSum<currSum){
+                maxSum=currSum;
+            }
+           
         }
-
+      
     }
-    public static void main(String[] args) {
-        int numbers[]={2,4,6,8,10,12};
-
-        reverse(numbers);
-
-        for(int i=0;i<numbers.length;i++){
-            System.out.print( numbers[i]+" ");
-
-        }
-        System.out.println();
-
-    }
+    System.out.println( "maxsubarray sum" +maxSum);
 }
+public static void main(String[] args) {
+    int numbers[]={1,-2,6,-1,3};
+    MaxSubaraySum(numbers);
+}
+
+}
+ 
