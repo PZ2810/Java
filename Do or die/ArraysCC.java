@@ -165,31 +165,63 @@ public class ArraysCC {
 //     }
 
 //Max Subarray Sum
-public static void MaxSubaraySum(int numbers[]){ 
-    int currSum=0;
-    int maxSum=Integer.MIN_VALUE;
-     for(int i=0;i<numbers.length;i++){
-        int start=i;
-   for(int j=i;j<numbers.length;j++){
-            int end=j;
-            currSum=0;
-            for(int k=start;k<=end;k++){
-                currSum+=numbers[k];
-            }
-            System.out.println(currSum);
-            if(maxSum<currSum){
-                maxSum=currSum;
-            }
+// public static void MaxSubaraySum(int numbers[]){ 
+//     int currSum=0;
+//     int maxSum=Integer.MIN_VALUE;
+//      for(int i=0;i<numbers.length;i++){
+//         int start=i;
+//    for(int j=i;j<numbers.length;j++){
+//             int end=j;
+//             currSum=0;
+//             for(int k=start;k<=end;k++){
+//                 currSum+=numbers[k];
+//             }
+//             System.out.println(currSum);
+//             if(maxSum<currSum){
+//                 maxSum=currSum;
+//             }
            
-        }
+//         }
       
+//     }
+//     System.out.println( "max sum = " +maxSum);
+// }
+//  public static void main(String[] args) {
+//      int numbers[]={1,-2,6,-1,3};
+// //     MaxSubaraySum(numbers);
+//  }
+
+// //Prefix Sum
+//   public static void maxSubarraySum(int numbers[]){
+//     int currSum=0;
+//     int maxSum=Integer.MIN_VALUE;
+//     int prefix[]=new int[numbers.length];
+
+//     prefix[0]=numbers[0];
+//     //calculate prefix array
+//     for(int i=1;i<prefix.length;i++){
+//         prefix[i]=prefix[i-1] +numbers[i];
+
+//     }
+//     for 
+//   }
+
+//kadan's Algorithm
+
+public static void kadanes(int numbers[]) {
+    int ms = Integer.MIN_VALUE;
+    int cs = 0;
+    for (int i = 0; i < numbers.length; i++) {
+        cs += numbers[i];
+        ms = Math.max(cs, ms);     // 1. Update ms before cs reset
+        if (cs < 0) cs = 0;        // 2. Only then reset cs if negative
     }
-    System.out.println( "maxsubarray sum" +maxSum);
-}
-public static void main(String[] args) {
-    int numbers[]={1,-2,6,-1,3};
-    MaxSubaraySum(numbers);
+    System.out.println("our max subarray sum is : " + ms);
 }
 
+  public static void main(String[] args) {
+    int number[]={-2,-3,4,-1,-2,1,-5,-3};
+kadanes(number);
+  }
 }
  
